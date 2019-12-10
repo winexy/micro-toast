@@ -74,15 +74,13 @@ function createToast(container: Element, config: IConfig): IToast {
 }
 
 function createDismissButton(toast: IToast): Element {
-  const container = createElement('div');
   const btn = createElement('button');
 
-  container.appendChild(btn);
   btn.classList.add('toast__dismiss');
   btn.textContent = '×';
   btn.addEventListener('click', function () {
     toast.dismiss();
   }, { once: true });
 
-  return container;
+  return btn;
 }
