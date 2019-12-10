@@ -1,17 +1,17 @@
-import { IConfig, IToast } from './interfaces';
-import { createElement } from './utils';
+import { IConfig, IToast, IPatchedConfig } from './interfaces';
+import { createElement, withDefaultConfigs } from './utils';
 
-export function toast(text: string, config: IConfig = {}): void {
+export function toast(text: string, _config: IConfig = {}): void {
+  const config = withDefaultConfigs(_config);
   const container = createContainerIfNeeded();
   const toast = createToast(container, text, config);
-  const { duration = 3000 } = config;
 
   appendToast(container, toast.el);
 
-  if (duration) {
+  if (config.duration) {
     setTimeout(function () {
       removeToast(container, toast.el);
-    }, duration);
+    }, config.duration);
   }
 }
 
@@ -45,15 +45,14 @@ function createContainerIfNeeded(): Element {
   return container;
 }
 
-function createToast(container: Element, text: string, config: IConfig): IToast {
-  const classes = config.classes || [];
+function createToast(container: Element, text: string, config: IPatchedConfig): IToast {
   const el = createElement('div');
   const content = createElement('p');
 
   content.classList.add('toast__content');
   content.textContent = text;
   
-  el.classList.add('toast', ...classes);
+  el.classList.add('toast', ...config.classes);
   el.setAttribute('role', 'alert');
   el.appendChild(content);
 
