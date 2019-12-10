@@ -42,9 +42,11 @@
 
   .toast__dismiss {
     padding: 0 12px 0 20px;
-    margin-left: 12px;
-    height: 100%;
+    margin: 0 12px 0 4px;
+    height: 40px;
+    width: 40px;
 
+    text-align: center;
     font-weight: 600;
     line-height: 20px;
     font-size: 20px;
@@ -52,14 +54,16 @@
 
     background-color: transparent;
     transition: .3s ease-in;
-    border: none;
+    border-radius: 5px;
 
     appearance: none;
     cursor: pointer;
+
   }
 
-  .toast__dismiss:hover {
-    text-decoration: underline;
+  .toast__dismiss:focus {
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
   }
 
   @media screen and (min-width: 800px) {
