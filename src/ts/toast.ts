@@ -8,14 +8,14 @@ export function toast(config: IConfig | string): void {
   const _config = normalizeConfig(config);
   const container = createContainerIfNeeded();
   const toast = createToast(container, _config);
-  const { timeOut = 3000 } = _config;
+  const { duration = 3000 } = _config;
 
   appendToast(container, toast.el);
 
-  if (timeOut) {
+  if (duration) {
     setTimeout(function () {
       removeToast(container, toast.el);
-    }, timeOut);
+    }, duration);
   }
 }
 

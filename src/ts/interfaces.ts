@@ -1,6 +1,5 @@
 export interface IConfig {
-  html: string,
-  timeOut?: number,
+  duration?: number,
   classes?: string[],
 };
 
