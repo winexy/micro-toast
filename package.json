@@ -5,7 +5,8 @@
   "scripts": {
     "build": "npm run build:ts && npm run build:css",
     "build:css": "gulp",
-    "build:ts": "rollup -c"
+    "build:ts": "rollup -c",
+    "build:demo": "parcel demo/index.html --out-dir demo/output"
   },
   "types": "./dist/toast.d.ts",
   "author": "Seitmagambet Olzhas",
