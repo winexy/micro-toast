@@ -7,5 +7,5 @@ exports.default = () =>
   gulp.src('./src/css/styles.css')
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(rename('toast.min.css'))
+    .pipe(rename('index.css'))
     .pipe(gulp.dest('dist'))

@@ -29,7 +29,7 @@ export default [
   {
     input: './dist/index.d.ts',
     output: [{
-      file: 'dist/toast.d.ts',
+      file: 'dist/types/index.d.ts',
       format: 'es'
     }],
     plugins: [dts()]
