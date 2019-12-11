@@ -1,16 +1,17 @@
 {
-  "name": "toast",
-  "version": "1.0.0",
+  "name": "micro-toast",
+  "version": "0.1.0",
+  "author": "Seitmagambet Olzhas",
   "module": "dist/toast.min.js",
+  "types": "./dist/toast.d.ts",
+  "license": "ISC",
   "scripts": {
+    "prepare": "npm run build",
     "build": "npm run build:ts && npm run build:css",
     "build:css": "gulp",
     "build:ts": "rollup -c",
     "build:demo": "parcel demo/index.html --out-dir demo/output"
   },
-  "types": "./dist/toast.d.ts",
-  "author": "Seitmagambet Olzhas",
-  "license": "ISC",
   "devDependencies": {
     "rollup": "^1.25.1",
     "rollup-plugin-css-porter": "^1.0.2",
