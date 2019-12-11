@@ -1,6 +1,6 @@
 {
   "name": "micro-toast",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Seitmagambet Olzhas",
   "module": "./dist/index.js",
   "main": "./dist/index.js",
