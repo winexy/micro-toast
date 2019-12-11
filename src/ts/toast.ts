@@ -47,10 +47,9 @@ function createContainerIfNeeded(): Element {
 
 function createToast(container: Element, text: string, config: IPatchedConfig): IToast {
   const el = createElement('div');
-  const content = createElement('p');
+  const content = createElement('div');
 
-  content.classList.add('toast__content');
-  content.textContent = text;
+  content.innerHTML = text;
   
   el.classList.add('toast', ...config.classes);
   el.setAttribute('role', 'alert');
