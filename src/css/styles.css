@@ -32,17 +32,13 @@
     margin-top: 0;
   }
 
-  .toast__content {
-    justify-content: flex-start;
-    align-items: center;
-    display: flex;
-    padding: 0;
-    margin: 0;
-  }
-
   .toast__dismiss {
-    padding: 0 12px 0 20px;
-    margin: 0 12px 0 4px;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0 12px;
+    margin: 0 4px;
+    display: flex;
     height: 40px;
     width: 40px;
 
@@ -53,6 +49,7 @@
     color: #fff;
 
     background-color: transparent;
+    border: 2px solid transparent;
     transition: .3s ease-in;
     border-radius: 5px;
 
