@@ -72,6 +72,7 @@ function createToast(container: Element, text: string, config: Required<IConfig>
     el,
     dismiss() {
       removeToast(container, el);
+      delete indexes[config.index];
     }
   }
 
