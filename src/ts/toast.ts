@@ -1,16 +1,29 @@
 import { IConfig, IToast } from './interfaces';
 import { createElement, withDefaultConfigs } from './utils';
 
+const indexes: Record<string, boolean> = {};
+
 export function toast(text: string, _config: IConfig = {}): void {
   const config = withDefaultConfigs(_config);
   const container = createContainerIfNeeded();
   const toast = createToast(container, text, config);
+
+  const { index } = config;
+
+  if (index !== '' && indexes.hasOwnProperty(index)) {
+    return;
+  }
+
+  if (index) {
+    indexes[index] = true;
+  }
 
   appendToast(container, toast.el);
 
   if (config.duration) {
     setTimeout(function () {
       removeToast(container, toast.el);
+      delete indexes[config.index];
     }, config.duration);
   }
 }
@@ -45,7 +58,7 @@ function createContainerIfNeeded(): Element {
   return container;
 }
 
-function createToast(container: Element, text: string, config: R<IConfig>): IToast {
+function createToast(container: Element, text: string, config: Required<IConfig>): IToast {
   const el = createElement('div');
   const content = createElement('div');
 

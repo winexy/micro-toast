@@ -1,11 +1,12 @@
-import { IConfig, IPatchedConfig } from './interfaces';
+import { IConfig } from './interfaces';
 
-export function withDefaultConfigs(cnfg: IConfig): IPatchedConfig {
+export function withDefaultConfigs(cnfg: IConfig): Required<IConfig> {
   return {
     duration: typeof cnfg.duration === 'undefined' 
       ? 3000 
       : cnfg.duration,
-    classes: cnfg.classes || []
+    classes: cnfg.classes || [],
+    index: cnfg.index ? cnfg.index : ''
   };
 }
 
