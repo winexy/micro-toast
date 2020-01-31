@@ -11,6 +11,10 @@ export default [
       {
         file: pkg.module,
         format: 'es'
+      },
+      {
+        file: pkg.main,
+        format: 'cjs'
       }
     ],
     external: [...Object.keys(pkg.dependencies || {})],
