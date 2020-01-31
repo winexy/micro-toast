@@ -1,4 +1,4 @@
-import { IConfig, IToast, IPatchedConfig } from './interfaces';
+import { IConfig, IToast } from './interfaces';
 import { createElement, withDefaultConfigs } from './utils';
 
 export function toast(text: string, _config: IConfig = {}): void {
@@ -45,7 +45,7 @@ function createContainerIfNeeded(): Element {
   return container;
 }
 
-function createToast(container: Element, text: string, config: IPatchedConfig): IToast {
+function createToast(container: Element, text: string, config: R<IConfig>): IToast {
   const el = createElement('div');
   const content = createElement('div');
 
