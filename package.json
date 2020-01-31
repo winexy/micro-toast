@@ -1,6 +1,6 @@
 {
   "name": "micro-toast",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "Seitmagambet Olzhas",
   "module": "./dist/index.esm.js",
   "main": "./dist/index.js",
