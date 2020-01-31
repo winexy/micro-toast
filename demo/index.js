@@ -1,5 +1,5 @@
-import { toast } from '../dist/toast.min.js';
+import { toast } from '../dist/index.js';
 
 button.onclick = function () {
-  toast('Demo text!');
+  toast(`test`, { duration: 0 });
 }
