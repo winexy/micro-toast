@@ -1,1 +1,1 @@
-export { toast } from './toast';
+export { toast, clearToastContainer } from './toast';

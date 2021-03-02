@@ -28,6 +28,20 @@ export function toast(text: string, _config: IConfig = {}): void {
   }
 }
 
+export function clearToastContainer() {
+  const container = document.querySelector('.toast-container');
+
+  if (!container) {
+    return;
+  }
+
+  Object.keys(indexes).forEach(k => delete indexes[k]);
+
+  Array.from(container.children).forEach(el => {
+    removeToast(container, el);
+  });  
+}
+
 function removeToast(container: Element, toast: Element): void {
   toast.classList.add('--remove');
   toast.addEventListener(
