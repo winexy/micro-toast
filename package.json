@@ -6,8 +6,11 @@
   "main": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "npm run build:ts && npm run build:css",
     "build:css": "gulp",
     "build:ts": "rollup -c",
