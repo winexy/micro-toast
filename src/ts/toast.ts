@@ -32,7 +32,7 @@ export function clearToastContainer() {
   const container = document.querySelector('.toast-container');
 
   if (!container) {
-    return
+    return;
   }
 
   Object.keys(indexes).forEach(k => delete indexes[k]);
